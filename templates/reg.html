@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='reg.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm" action="/register" method="POST" onsubmit="return validateForm()">
+            <div class="form-inner">
+                <div class="form-left">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password">
+                    </div>
+                </div>
+                <div class="form-right">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="gender-options">
+                    <label for="male">Male</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="female">Female</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="preferNotSay">Prefer not to say</label>
+                    <input type="radio" id="preferNotSay" name="gender" value="preferNotSay">
+                </div>
+            </div>
+    
+            <!-- Success/Error messages will be displayed here -->
+            <div id="successMsg" class="success-message"></div>
+    
+            <!-- Register Button with Error Message Below -->
+            <button type="submit" class="submit-btn">Register</button>
+            <div id="errorMsg" class="error-message"></div>
+        </form>
+    </div>
+    
+    <script src="{{ url_for('static', filename='reg.js') }}"></script>
+</body>
+</html>
